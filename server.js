@@ -28,15 +28,17 @@ const express = require('express')
 const cors = require('cors');
 const app = express();
 
+// Cấu hình CORS cho phép tất cả origins và headers
 app.use(cors());
 
 app.use(express.json());
 const dongxeRouter = require('./routers/dongxeRouter');
-const port = 3000 ;
+const port = 3000;
 
 app.use('/dongxe', dongxeRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
 
