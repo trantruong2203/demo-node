@@ -5,11 +5,11 @@ const validate = require('../middleware/validations');
 const dongxeSchema = require('../validations/dongxe.schema');
 
 router.get('/', dongxeController.getAll);
-// router.get('/paginate', dongxeController.getDongxeWithPagination);
-// router.get('/search', dongxeController.searchDongxe);
-// router.get('/:id', dongxeController.getByIddongxe);
-// router.post('/', validate(dongxeSchema), dongxeController.createDongxe);
-// router.put('/:id', validate(dongxeSchema), dongxeController.updateDongxe);
-// router.delete('/:id', dongxeController.deleteDongxe);
+router.get('/paginate', dongxeController.getWithPagination);
+router.get('/search', dongxeController.search);
+router.get('/:id', dongxeController.getById);
+router.post('/', validate(dongxeSchema), dongxeController.create);
+router.put('/:id', validate(dongxeSchema), dongxeController.update);
+router.delete('/:id', dongxeController.delete);
 
 module.exports = router;
